@@ -1,1 +1,18 @@
-<p>page-list-films works!</p>
+<h1>Liste des films</h1>
+
+<table class="table">
+    <tbody>
+        <tr *ngFor="let film of listFilms">
+            <td><button (click)="onClickFilm(film)">{{ film.title }} {{ film.release_date }}</button></td>
+            <!-- <td>{{ film.title }}</td> -->
+            <!-- <td>{{ film.release_date }}</td> -->
+            <!--             <td>
+                <button class="btn btn-warning" onclick()="onClickDeleteSenior">Supprimer</button>
+            </td>
+            
+ -->
+
+
+        </tr>
+    </tbody>
+</table>

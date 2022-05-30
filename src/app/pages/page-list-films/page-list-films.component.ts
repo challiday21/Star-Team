@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Film } from 'src/app/models/film';
+import { FilmsService } from 'src/app/services/films.service';
 
 @Component({
   selector: 'app-page-list-films',
@@ -7,9 +9,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageListFilmsComponent implements OnInit {
 
-  constructor() { }
+  public listFilms!: Film[];
+  public results!: any;
+  router: any;
+
+  constructor(private filmsService: FilmsService) { }
 
   ngOnInit(): void {
+
+    this.filmsService.getAllFilms().subscribe((resp) => {
+      console.log(resp);
+      this.listFilms = resp.results;
+    })
   }
 
-}
+  onClickFilm(filmClicked: Film) {
+    console.log(filmClicked);
+
+    // this.router.navigateByUrl('/page-film');
+
+
+  }
+
+/*   clickEvent() {
+    this.msg = 'Button is Clicked';
+    return this.msg;
+  }
+ */}
+
