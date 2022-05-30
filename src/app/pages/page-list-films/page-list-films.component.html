@@ -4,15 +4,14 @@
     <tbody>
         <tr *ngFor="let film of listFilms">
             <td><button (click)="onClickFilm(film)">{{ film.title }} {{ film.release_date }}</button></td>
-            <!-- <td>{{ film.title }}</td> -->
-            <!-- <td>{{ film.release_date }}</td> -->
-            <!--             <td>
-                <button class="btn btn-warning" onclick()="onClickDeleteSenior">Supprimer</button>
-            </td>
-            
- -->
-
-
         </tr>
     </tbody>
 </table>
+
+<article *ngIf="detail">
+    <h2>{{ detail.title }} --- Tome {{ detail.episode_id }}</h2>
+    <p>{{ detail.opening_crawl }}</p>
+    <p>Director: {{ detail.director }}</p>
+    <p>Producer: {{ detail.producer }}</p>
+    <p>Release Date: {{ detail.release_date }}</p>
+</article>

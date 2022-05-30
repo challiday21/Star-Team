@@ -12,6 +12,8 @@ export class PageListFilmsComponent implements OnInit {
   public listFilms!: Film[];
   public results!: any;
   router: any;
+  public detail!: Film;
+
 
   constructor(private filmsService: FilmsService) { }
 
@@ -24,16 +26,7 @@ export class PageListFilmsComponent implements OnInit {
   }
 
   onClickFilm(filmClicked: Film) {
-    console.log(filmClicked);
-
-    // this.router.navigateByUrl('/page-film');
-
-
+    console.log(filmClicked.title);
+    this.detail = filmClicked;
   }
-
-/*   clickEvent() {
-    this.msg = 'Button is Clicked';
-    return this.msg;
-  }
- */}
-
+}
